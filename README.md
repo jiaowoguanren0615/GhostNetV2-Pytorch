@@ -3,6 +3,7 @@ This is a warehouse for GhostNetV2-pytorch-model, can be used to train your imag
 The code mainly comes from official source code (https://github.com/huawei-noah/Efficient-AI-Backbones/tree/master/ghostnetv2_pytorch)
 
 ## GhostNetV2: Enhance Cheap Operation with Long-Range Attention
+Paper: https://arxiv.org/pdf/2211.12905.pdf
 
 ## Project Structure
 ```

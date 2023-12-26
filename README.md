@@ -1,9 +1,6 @@
-# GhostNetV2-Pytorch
+# [GhostNetV2: Enhance Cheap Operation with Long-Range Attention](https://arxiv.org/pdf/2211.12905.pdf)
 This is a warehouse for GhostNetV2-pytorch-model, can be used to train your image datasets for classification tasks.
-The code mainly comes from official source code (https://github.com/huawei-noah/Efficient-AI-Backbones/tree/master/ghostnetv2_pytorch)
-
-## GhostNetV2: Enhance Cheap Operation with Long-Range Attention
-### Paper: https://arxiv.org/pdf/2211.12905.pdf
+The code mainly comes from official [source code](https://github.com/huawei-noah/Efficient-AI-Backbones/tree/master/ghostnetv2_pytorch)
 
 ## Project Structure
 ```
@@ -45,7 +42,7 @@ optimizer = SophiaG(model.parameters(), lr=2e-4, betas=(0.965, 0.99), rho=0.01, 
 6. master_port: <master node (machine/server) port number>
 ```
 ### Note: 
-If you want to use multiple GPU for training, whether it is a single machine with multiple GPUs or multiple machines with multiple GPUs, each GPU will divide the batch_size equally. For example, batch_size=4 in my train_gpu.py. If I want to use 2 GPUs for training, each GPU will divide the batch_size. That means batch_size=2 on each GPU. ___Do not let batch_size=1 on each GPU___, otherwise BN layer maybe report an error. If you recive an error like "___ONE-PEACE training and evaluation script: error: unrecognized arguments: --local-rank=1___" when you use distributed multi-GPUs training, just replace the command "___torch.distributed.launch___" to "___torch.distributed.run___".
+If you want to use multiple GPU for training, whether it is a single machine with multiple GPUs or multiple machines with multiple GPUs, each GPU will divide the batch_size equally. For example, batch_size=4 in my train_gpu.py. If I want to use 2 GPUs for training, it means that the batch_size on each GPU is 4. ___Do not let batch_size=1 on each GPU___, otherwise BN layer maybe report an error. If you recive an error like "___ONE-PEACE training and evaluation script: error: unrecognized arguments: --local-rank=1___" when you use distributed multi-GPUs training, just replace the command "___torch.distributed.launch___" to "___torch.distributed.run___".
 
 ### train model with single-machine single-GPU：
 ```
